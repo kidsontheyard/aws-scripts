@@ -26,4 +26,4 @@ and Educational Therapists/Specialists.
 ```
 [Kids on the Yard](https://kidsontheyard.com/)
 
-[Ubunto nginx pre-setup Read Me File](ec2/ubuntu/22.04/nginx/README.md)
+[Latest Ubuntu nginx pre-setup information](ec2/ubuntu/22.04/nginx/README.md)
