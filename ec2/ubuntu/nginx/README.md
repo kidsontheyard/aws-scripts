@@ -1,5 +1,11 @@
 # Ubuntu Web Pre Setup Scripts
 
+## Step 1: Verify Ubuntu Version
+```
+lsb_release -a
+```
+## Step 2: Install common packages
+
 ```
 wget -O - https://raw.githubusercontent.com/kidsontheyard/aws-scripts/main/ec2/ubuntu/nginx/pre-setup.sh | bash
 ```
