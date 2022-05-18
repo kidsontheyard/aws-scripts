@@ -1,5 +1,24 @@
-# Ubuntu Web Pre Setup Scripts
-
+# Ubuntu NGINX Servers Pre Setup Scripts
+```
+      ██╗  ██╗██╗██████╗ ███████╗     ██████╗ ███╗   ██╗
+      ██║ ██╔╝██║██╔══██╗██╔════╝    ██╔═══██╗████╗  ██║
+      █████╔╝ ██║██║  ██║███████╗    ██║   ██║██╔██╗ ██║
+      ██╔═██╗ ██║██║  ██║╚════██║    ██║   ██║██║╚██╗██║
+      ██║  ██╗██║██████╔╝███████║    ╚██████╔╝██║ ╚████║
+      ╚═╝  ╚═╝╚═╝╚═════╝ ╚══════╝     ╚═════╝ ╚═╝  ╚═══╝ Kids on the Yard
+      ████████╗██╗  ██╗███████╗    ██╗   ██╗ █████╗ ██████╗ ██████╗
+      ╚══██╔══╝██║  ██║██╔════╝    ╚██╗ ██╔╝██╔══██╗██╔══██╗██╔══██╗
+         ██║   ███████║█████╗       ╚████╔╝ ███████║██████╔╝██║  ██║
+         ██║   ██╔══██║██╔══╝        ╚██╔╝  ██╔══██║██╔══██╗██║  ██║
+         ██║   ██║  ██║███████╗       ██║   ██║  ██║██║  ██║██████╔╝
+         ╚═╝   ╚═╝  ╚═╝╚══════╝       ╚═╝   ╚═╝  ╚═╝╚═╝  ╚═╝╚═════╝
+                                                
+     Kids on the Yard offer 21st-Century Whole Child Tutoring Approach 
+     In-Person & Online for Pre-K through College years plus Adults! 
+                     For Their Future, For Their Growth
+           “Because life happens on the yard and in the classroom™
+                        https://kidsontheyard.com/
+```
 ## Step 1: Verify Ubuntu Version
 ```
 lsb_release -a
