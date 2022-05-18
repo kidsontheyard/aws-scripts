@@ -7,7 +7,7 @@ lsb_release -a
 ## Step 2: Install common packages
 
 ```
-wget -O - https://raw.githubusercontent.com/kidsontheyard/aws-scripts/main/ec2/ubuntu/nginx/pre-setup.sh | bash
+wget -O - https://raw.githubusercontent.com/kidsontheyard/aws-scripts/main/ec2/ubuntu/22.04/nginx/pre-setup.sh | bash
 ```
 
 ## After Pre Setup:
