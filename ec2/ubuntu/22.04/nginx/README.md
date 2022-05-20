@@ -29,6 +29,7 @@ lsb_release -a
 wget -O - https://raw.githubusercontent.com/kidsontheyard/aws-scripts/main/ec2/ubuntu/22.04/nginx/pre-setup.sh | bash
 ```
 
+
 ## After Pre Setup:
 * Connect AWS EFS (elastic file system)
 * Add scripts path
@@ -38,6 +39,8 @@ wget -O - https://raw.githubusercontent.com/kidsontheyard/aws-scripts/main/ec2/u
 ### Adding scripts path:
 
 ```
+sudo apt update -y && sudo apt upgrade -y
+
 /efs/setup/scripts/adding-scripts-path.sh
 ```
 
