@@ -86,6 +86,33 @@ sudo apt install whois -y
 ```
 
 Mosh Server
+Required to update ports after install
 ```
 sudo apt install mosh -y
 ```
+
+
+## Nice to have
+### Bash prompt on Ubuntu - FULL FQDN insted short host name (\h)
+
+Change ```~/.bashrc``` or ```/etc/profile``` based on need
+
+Replace: 
+```
+if [ "$color_prompt" = yes ]; then
+    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+else
+    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
+fi
+```
+
+With:
+
+```
+if [ "$color_prompt" = yes ]; then
+    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@$(hostname -f)\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+else
+    PS1='${debian_chroot:+($debian_chroot)}\u@$(hostname -f):\w\$ '
+fi
+```
+We are using an explicit call to ```$(hostname -f)``` to get the FQDN of the system insted ```\H``` or ```\h```
