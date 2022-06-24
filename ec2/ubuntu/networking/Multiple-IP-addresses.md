@@ -10,12 +10,12 @@ Refer the link [1] for more details.
 5)Enter a specific IPv4 address that's within the subnet range for the instance, or leave the field blank to let Amazon select an IP address for you. 
 6)Choose Yes, Update.
 
-[^1] https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/MultipleIP.html#assignIP-existing  
+[1] https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/MultipleIP.html#assignIP-existing  
 
 ## Step 2: Assign secondary public IP address
 
 If you are looking for adding a secondary public IP address to the instance then, you need to create an Elastic IP address (EIP) and assign it to the newly assigned Private IP address. Below are the steps for the same. If you need only private IP address, please proceed with step 3. 
-Refer link [^2] for more details. 
+Refer link [2] for more details. 
 
 1) Open the Amazon EC2 console 
 2) In the navigation pane, choose Elastic IPs. 
@@ -23,7 +23,7 @@ Refer link [^2] for more details.
 4) For Network interface, select the network interface, and then select the secondary IP address from the Private IP list. 
 5) Choose Associate.
 
-[^2] Multiple IP addresses - Associate an Elastic IP address with the secondary private IPv4 address - 
+[2] Multiple IP addresses - Associate an Elastic IP address with the secondary private IPv4 address - 
 https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/MultipleIP.html#StepThreeEIP  ?
 
 ## Step 3: Enable the secondary private IP address at the operating system level
@@ -234,9 +234,9 @@ rtt min/avg/max/mdev = 0.913/0.925/0.948/0.013 ms
 
 You can also try the above steps to add the secondary IP address. I would strongly recommend you to test the mentioned steps in a non production system before moving to the production server, Also consider taking backup your EC2 instance either by taking a snapshots[3] of the EBS volumes or creating an AMI[4] of your instance to avoid any unpredictable events.
 
-[^3] Snapshot - https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-creating-snapshot.html  
-[^4] AMI - https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AMIs  ??
+[3] Snapshot - https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-creating-snapshot.html  
+[4] AMI - https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AMIs
 
-If you are looking to add a secondary Network interface and assign IP address to it, then please refer the link [^5] which explains the steps for that in detail.
+If you are looking to add a secondary Network interface and assign IP address to it, then please refer the link [5] which explains the steps for that in detail.
 
-[^5] https://aws.amazon.com/premiumsupport/knowledge-center/ec2-ubuntu-secondary-network-interface/ 
+[5] https://aws.amazon.com/premiumsupport/knowledge-center/ec2-ubuntu-secondary-network-interface/ 
