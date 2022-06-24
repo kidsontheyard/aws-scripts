@@ -24,7 +24,7 @@ Refer link [2] for more details.
 5) Choose Associate.
 
 [2] Multiple IP addresses - Associate an Elastic IP address with the secondary private IPv4 address - 
-https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/MultipleIP.html#StepThreeEIP  ?
+https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/MultipleIP.html#StepThreeEIP
 
 ## Step 3: Enable the secondary private IP address at the operating system level
 
@@ -94,11 +94,10 @@ Note:
 ### Step 3.2: Configuring the additional IP's to be persistent after a reboot (netplan)
 
 Below is an example of configuring the additional IP's to be persistent after a reboot.
-==================================================================================================
 
-?I found a document which assists with using multiple addresses on a single interface (This is an example and requires you to make adjustments)
+I found a document which assists with using multiple addresses on a single interface (This is an example and requires you to make adjustments)
 
---> https://netplan.io/examples/ 
+* https://netplan.io/examples/ 
 
 The below steps requires some manual intervention from your end to ensure it suits your solution.
 
@@ -121,7 +120,7 @@ Below is the original network configuration file:
 ```bash
 $ sudo cat /etc/netplan/50-cloud-init.yaml 
 ```
-====================================================
+
 ```bash
 # network: {config: disabled}
 network:
@@ -131,13 +130,13 @@ network:
           dhcp6: false
           match:
             macaddress: 12:xx;x;xx;xx;x
-          set-name: ens5?
+          set-name: ens5
 ```
-3) I then modified my network configuration file and added my secondary IP address 172.31.92.180  in it, currently my network configuration file looks like below:?
+3) I then modified my network configuration file and added my secondary IP address 172.31.92.180  in it, currently my network configuration file looks like below:
 ```bash
 $ cat /etc/netplan/50-cloud-init.yaml
 ```
-====================================================?
+
 ```bash
 # network: {config: disabled}
 network:
@@ -153,22 +152,22 @@ network:
           set-name: ens5
     version: 2
 ```
-====================================================
 
 4) I used the below command  to try to apply a new netplan config to running system, with automatic rollback
+
 ```bash
 $ sudo netplan try
 ```
 
-5) I have then used below command to apply the changes to the network configuration: ?
+5) I have then used below command to apply the changes to the network configuration:
 
 ```bash
 $ sudo netplan --debug apply
 ```
-6) Now when I check the IP address using 'sudo ip a s ens5' command, I was able to see both IP addresses (172.31.87.32 and 172.31.92.180) are assigned to my network interface ens5, see the below output
+6) 
+7) Now when I check the IP address using 'sudo ip a s ens5' command, I was able to see both IP addresses (172.31.87.32 and 172.31.92.180) are assigned to my network interface ens5, see the below output
 
-Secondary IP on the same interface
-====================================================
+####Secondary IP on the same interface
 
 ```bash
 $ ip a
@@ -190,11 +189,11 @@ $ ip a
        valid_lft forever preferred_lft forever
 ```
 
-I have confirmed by using Ping, If either of these commands returns ICMP echo reply messages, network connectivity exists between the two devices. ?
+I have confirmed by using Ping, If either of these commands returns ICMP echo reply messages, network connectivity exists between the two devices.
 
 "Syntax: ping -I source iP destination IP"
 
---> Primary Private IP address
+#### Primary Private IP address
 
 ```bash
 $ ping -I 172.31.87.32 8.8.8.8 -c 4
@@ -211,7 +210,7 @@ PING 8.8.8.8 (8.8.8.8) from 172.31.87.32 : 56(84) bytes of data.
 rtt min/avg/max/mdev = 0.852/0.901/0.926/0.029 ms
 ```
 
---> Secondary Private IP address:
+#### Secondary Private IP address:
 
 ```bash
 $ ping -I  172.31.92.180 8.8.8.8 -c 4
@@ -229,7 +228,7 @@ PING 8.8.8.8 (8.8.8.8) from 172.31.92.180 : 56(84) bytes of data.
 rtt min/avg/max/mdev = 0.913/0.925/0.948/0.013 ms
 ```
 
-7) I was able to login to the instance with the newly assigned Elastic IP address successfully as well.?
+7) I was able to login to the instance with the newly assigned Elastic IP address successfully as well.
 
 
 You can also try the above steps to add the secondary IP address. I would strongly recommend you to test the mentioned steps in a non production system before moving to the production server, Also consider taking backup your EC2 instance either by taking a snapshots[3] of the EBS volumes or creating an AMI[4] of your instance to avoid any unpredictable events.
