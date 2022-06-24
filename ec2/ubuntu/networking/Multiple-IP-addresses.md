@@ -238,3 +238,5 @@ You can also try the above steps to add the secondary IP address. I would strong
 If you are looking to add a secondary Network interface and assign IP address to it, then please refer the link [5] which explains the steps for that in detail.
 
 [5]: https://aws.amazon.com/premiumsupport/knowledge-center/ec2-ubuntu-secondary-network-interface/ 
+
+[6]: Elastic network interfaces (IP addresses per network interface per instance type) - https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html 
